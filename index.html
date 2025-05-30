@@ -71,14 +71,58 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- Dialogflow Messenger chatbot -->
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger
-    intent="WELCOME"
-    chat-title="chat bot"
-    agent-id="5ee02dbe-6b80-4d92-b682-57c302c60a02"
-    language-code="en"
-  ></df-messenger>
+<style>
+df-messenger {
+  /* Your existing df-messenger custom properties */
+  --df-messenger-button-titlebar-color: #000000d2;
+  --df-messenger-button-titlebar-font-color: #ffffff;
+
+  --df-messenger-chat-background-color: #ffffff;
+  --df-messenger-font-color: #333333;
+
+  --df-messenger-input-box-color: #f0f0f0;
+  --df-messenger-input-font-color: #000000;
+
+  --df-messenger-send-icon: #10a37f;
+
+  --df-user-message: #e6f4ea;
+  --df-user-message-font-color: #000000;
+  --df-bot-message: #f5f5f5;
+  --df-bot-message-font-color: #000000;
+
+  --df-avatar-background: #10a37f;
+  --df-avatar-font-color: #ffffff;
+
+  --df-messenger-border-radius: 16px;
+
+  width: 370px;
+  height: 500px;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* Add this part selector for launcher icon */
+df-messenger::part(launcher-icon) {
+  border-radius: 50%; /* Make sure icon is circular */
+  object-fit: cover;
+  width: 98px;
+  height: 98px;
+}
+</style>
+
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="BCA Chatbot"
+  agent-id="5ee02dbe-6b80-4d92-b682-57c302c60a02"
+  language-code="en"
+  chat-icon="Crabox.png"
+  background-color="#1a73e8"
+  font-color="#ffffff"
+></df-messenger>
 </body>
 </html>
