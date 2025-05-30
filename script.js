@@ -25,3 +25,10 @@ window.addEventListener('scroll', () => {
     link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSectionId);
   });
 });
+
+// Optional: Log when Dialogflow script is loaded
+window.addEventListener('load', () => {
+  if (window.dfMessenger) {
+    console.log('Dialogflow Messenger chatbot loaded');
+  }
+});
